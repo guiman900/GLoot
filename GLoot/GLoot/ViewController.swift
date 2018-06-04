@@ -9,17 +9,33 @@
 import UIKit
 import GLootNetworkLibrary
 
+/**
+ TableView cell used on the ViewController
+ */
 class ViewController: UIViewController {
+    // - Mark: properties
 
+    /// player name, used on the player view for edit.
     @IBOutlet weak var playerName: UITextField!
+    /// tab bar containing the add player button
     @IBOutlet weak var tabBar: UITabBar!
+    /// tableView containing the players
     @IBOutlet weak var tableView: UITableView!
+    /// player view, displaying the player information / edit the player name
     @IBOutlet weak var playerView: UIView!
     
+    /// GLoot network
     var network: GLootNetwork?
+    
+    /// List of players
     var players: [GLootPlayer]?
+    /// selected user on the playerView
     var selectedPlayer: GLootPlayer?
     
+    // - Mark: Methods
+    /**
+     Called after the controller's view is loaded into memory.
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,15 +45,27 @@ class ViewController: UIViewController {
         network?.getPlayers()
         
         self.initViewWithBlur()
+        
     }
 
+    /**
+     Sent to the view controller when the app receives a memory warning.
+    */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
 }
 
+/**
+ UITbabBar delegate
+ */
 extension ViewController: UITabBarDelegate {
+    /**
+     Sent to the delegate when the user selects a tab bar item.
+     
+     - Parameter tabBar: The tab bar that is being customized.
+     - Parameter item: The tab bar item that was selected.
+     */
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem)
     {
             let alert = UIAlertController(title: "Add User", message: "Enter a name for the new player.", preferredStyle: .alert)
@@ -63,14 +91,33 @@ extension ViewController: UITabBarDelegate {
 }
 
 extension ViewController: UITableViewDelegate {
+    /**
+     Asks the data source to verify that the given row is editable.
+     
+     - Parameter tableView: The table-view object requesting this information.
+     - Parameter indexPath: An index path locating a row in tableView.
+     */
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
+    /**
+     Asks the data source to commit the insertion or deletion of a specified row in the receiver.
+     
+     - Parameter tableView: The table-view object requesting the insertion or deletion.
+     - Parameter editingStyle: The cell editing style corresponding to a insertion or deletion requested for the row specified by indexPath. Possible editing styles are insert or delete.
+     - Parameter indexPath: An index path locating the row in tableView.
+    */
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
     }
     
+    /**
+     Asks the delegate for the actions to display in response to a swipe in the specified row.
+     
+     - Parameter tableView: The table view object requesting this information.
+     - Parameter indexPath: The index path of the row.
+     */
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let index = indexPath.section
         
@@ -88,7 +135,8 @@ extension ViewController: UITableViewDelegate {
             
             self.present(alert, animated: true)
         }
-        
+        deleteAction.backgroundColor = UIColor(red: 32/255, green: 32/255, blue: 48/255, alpha: 1)
+
         
         let editAction = UITableViewRowAction(style: .normal, title: "Edit") {action in
             let alert = UIAlertController(title: "Edit User", message: "Enter a new name for the player.", preferredStyle: .alert)
@@ -111,27 +159,47 @@ extension ViewController: UITableViewDelegate {
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             
             self.present(alert, animated: true)
-
         }
         
+        editAction.backgroundColor = UIColor(red: 32/255, green: 32/255, blue: 48/255, alpha: 1)
+
         return [deleteAction, editAction]
     }
 
+    /**
+     Tells the delegate that the specified row is now selected.
+     
+     - Parameter tableView: A table-view object informing the delegate about the new row selection.
+     - Parameter indexPath: An index path locating the new selected row in tableView.
+    */
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectedPlayer = self.players?[indexPath.section]
         self.addContactView()
     }
 }
 
+/**
+ UITableView Data Source
+ */
 extension ViewController: UITableViewDataSource {
-    
+    /**
+     Asks the data source to return the number of sections in the table view.
+     
+     - Parameter tableView: An object representing the table view requesting this information.
+    */
     public func numberOfSections(in tableView: UITableView) -> Int {
         guard let players = self.players else {
             return 0
         }
-    return players.count
+        return players.count
     }
     
+    /**
+     Tells the data source to return the number of rows in a given section of a table view.
+     
+     - Parameter tableView: The table-view object requesting this information.
+     - Parameter section: An index number identifying a section in tableView.
+    */
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.players == nil {
             return 0
@@ -139,6 +207,12 @@ extension ViewController: UITableViewDataSource {
         return 1
     }
     
+    /**
+     Asks the data source for a cell to insert in a particular location of the table view.
+     
+     - Parameter tableView: A table-view object requesting the cell.
+     - Parameter indexPath: An index path locating a row in tableView.
+     */
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerCell", for: indexPath) as? PlayerCell else {
             return UITableViewCell()
@@ -149,13 +223,27 @@ extension ViewController: UITableViewDataSource {
 
         }
         cell.name.text = name.name
+        
         return cell
     }
     
+    /**
+     Asks the delegate for the height to use for the header of a particular section.
+     This method allows the delegate to specify section headers with varying heights.
+     
+     - Parameter tableView: The table-view object requesting this information.
+     - Parameter section: An index number identifying a section of tableView .
+    */
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 10
     }
 
+    /**
+     Asks the delegate for a view object to display in the header of the specified section of the table view.
+     
+     - Parameter tableView: The table-view object asking for the view object.
+     - Parameter section: An index number identifying a section of tableView .
+    */
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
         headerView.backgroundColor = UIColor.clear
@@ -163,8 +251,14 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
-
+/**
+ ViewController Extension managing the PlayerView
+ */
 extension ViewController {
+    
+    /**
+     Create a blut effect on the playerView.
+     */
     func initViewWithBlur()
     {
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.regular)
@@ -176,6 +270,9 @@ extension ViewController {
         playerView.sendSubview(toBack: blurEffectView)
     }
     
+    /**
+     Add the playerView with a transition
+     */
     func addContactView()
     {
         self.playerName.text = selectedPlayer?.name
@@ -184,17 +281,30 @@ extension ViewController {
         
     }
     
+    /**
+     remove the playerView with a transition
+     */
     func removePlayerView()
     {
         UIView.transition(with: self.view, duration: 0.3, options: UIViewAnimationOptions.transitionCrossDissolve,
                           animations: {self.playerView.removeFromSuperview()}, completion: nil)
     }
     
+    /**
+     Method triggered when the user ckick on the close / cancel button
+     
+     - Parameter sender: The close button.
+    */
     @IBAction func closePlayerView(_ sender: UIButton) {
         self.removePlayerView()
         self.selectedPlayer = nil
     }
     
+    /**
+     Method triggered when the user ckick on the save button
+     
+     - Parameter sender: The save button.
+     */
     @IBAction func saveChanges(_ sender: UIButton) {
         self.removePlayerView()
         
@@ -205,6 +315,11 @@ extension ViewController {
         self.selectedPlayer = nil
     }
     
+    /**
+     Method triggered when the user ckick on the delete button
+     
+     - Parameter sender: The delete button.
+     */
     @IBAction func deleteUser(_ sender: UIButton) {
         self.removePlayerView()
 
@@ -218,6 +333,9 @@ extension ViewController {
     
 }
 
+/**
+ Asynchronus delegate of the GLootNetworkLibrary
+ */
 extension ViewController : GLootNetworkProtocol {
     /**
      getPlayers response
