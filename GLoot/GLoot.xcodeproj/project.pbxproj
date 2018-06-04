@@ -1,0 +1,547 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		55338D4920C5303B005BD5DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55338D4820C5303B005BD5DD /* AppDelegate.swift */; };
+		55338D4B20C5303B005BD5DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55338D4A20C5303B005BD5DD /* ViewController.swift */; };
+		55338D4E20C5303B005BD5DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55338D4C20C5303B005BD5DD /* Main.storyboard */; };
+		55338D5120C5303B005BD5DD /* GLoot.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55338D4F20C5303B005BD5DD /* GLoot.xcdatamodeld */; };
+		55338D5320C5303B005BD5DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55338D5220C5303B005BD5DD /* Assets.xcassets */; };
+		55338D5620C5303B005BD5DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55338D5420C5303B005BD5DD /* LaunchScreen.storyboard */; };
+		55338D6120C5303B005BD5DD /* GLootTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55338D6020C5303B005BD5DD /* GLootTests.swift */; };
+		55338D6C20C5303B005BD5DD /* GLootUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55338D6B20C5303B005BD5DD /* GLootUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		55338D5D20C5303B005BD5DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55338D3D20C5303B005BD5DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55338D4420C5303B005BD5DD;
+			remoteInfo = GLoot;
+		};
+		55338D6820C5303B005BD5DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55338D3D20C5303B005BD5DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55338D4420C5303B005BD5DD;
+			remoteInfo = GLoot;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		55338D4520C5303B005BD5DD /* GLoot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GLoot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		55338D4820C5303B005BD5DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		55338D4A20C5303B005BD5DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		55338D4D20C5303B005BD5DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		55338D5020C5303B005BD5DD /* GLoot.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GLoot.xcdatamodel; sourceTree = "<group>"; };
+		55338D5220C5303B005BD5DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		55338D5520C5303B005BD5DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		55338D5720C5303B005BD5DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55338D5C20C5303B005BD5DD /* GLootTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GLootTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		55338D6020C5303B005BD5DD /* GLootTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLootTests.swift; sourceTree = "<group>"; };
+		55338D6220C5303B005BD5DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55338D6720C5303B005BD5DD /* GLootUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GLootUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		55338D6B20C5303B005BD5DD /* GLootUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLootUITests.swift; sourceTree = "<group>"; };
+		55338D6D20C5303B005BD5DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		55338D4220C5303B005BD5DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55338D5920C5303B005BD5DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55338D6420C5303B005BD5DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		55338D3C20C5303B005BD5DD = {
+			isa = PBXGroup;
+			children = (
+				55338D4720C5303B005BD5DD /* GLoot */,
+				55338D5F20C5303B005BD5DD /* GLootTests */,
+				55338D6A20C5303B005BD5DD /* GLootUITests */,
+				55338D4620C5303B005BD5DD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		55338D4620C5303B005BD5DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				55338D4520C5303B005BD5DD /* GLoot.app */,
+				55338D5C20C5303B005BD5DD /* GLootTests.xctest */,
+				55338D6720C5303B005BD5DD /* GLootUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		55338D4720C5303B005BD5DD /* GLoot */ = {
+			isa = PBXGroup;
+			children = (
+				55338D4820C5303B005BD5DD /* AppDelegate.swift */,
+				55338D4A20C5303B005BD5DD /* ViewController.swift */,
+				55338D4C20C5303B005BD5DD /* Main.storyboard */,
+				55338D5220C5303B005BD5DD /* Assets.xcassets */,
+				55338D5420C5303B005BD5DD /* LaunchScreen.storyboard */,
+				55338D5720C5303B005BD5DD /* Info.plist */,
+				55338D4F20C5303B005BD5DD /* GLoot.xcdatamodeld */,
+			);
+			path = GLoot;
+			sourceTree = "<group>";
+		};
+		55338D5F20C5303B005BD5DD /* GLootTests */ = {
+			isa = PBXGroup;
+			children = (
+				55338D6020C5303B005BD5DD /* GLootTests.swift */,
+				55338D6220C5303B005BD5DD /* Info.plist */,
+			);
+			path = GLootTests;
+			sourceTree = "<group>";
+		};
+		55338D6A20C5303B005BD5DD /* GLootUITests */ = {
+			isa = PBXGroup;
+			children = (
+				55338D6B20C5303B005BD5DD /* GLootUITests.swift */,
+				55338D6D20C5303B005BD5DD /* Info.plist */,
+			);
+			path = GLootUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		55338D4420C5303B005BD5DD /* GLoot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55338D7020C5303B005BD5DD /* Build configuration list for PBXNativeTarget "GLoot" */;
+			buildPhases = (
+				55338D4120C5303B005BD5DD /* Sources */,
+				55338D4220C5303B005BD5DD /* Frameworks */,
+				55338D4320C5303B005BD5DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GLoot;
+			productName = GLoot;
+			productReference = 55338D4520C5303B005BD5DD /* GLoot.app */;
+			productType = "com.apple.product-type.application";
+		};
+		55338D5B20C5303B005BD5DD /* GLootTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55338D7320C5303B005BD5DD /* Build configuration list for PBXNativeTarget "GLootTests" */;
+			buildPhases = (
+				55338D5820C5303B005BD5DD /* Sources */,
+				55338D5920C5303B005BD5DD /* Frameworks */,
+				55338D5A20C5303B005BD5DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55338D5E20C5303B005BD5DD /* PBXTargetDependency */,
+			);
+			name = GLootTests;
+			productName = GLootTests;
+			productReference = 55338D5C20C5303B005BD5DD /* GLootTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		55338D6620C5303B005BD5DD /* GLootUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55338D7620C5303B005BD5DD /* Build configuration list for PBXNativeTarget "GLootUITests" */;
+			buildPhases = (
+				55338D6320C5303B005BD5DD /* Sources */,
+				55338D6420C5303B005BD5DD /* Frameworks */,
+				55338D6520C5303B005BD5DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55338D6920C5303B005BD5DD /* PBXTargetDependency */,
+			);
+			name = GLootUITests;
+			productName = GLootUITests;
+			productReference = 55338D6720C5303B005BD5DD /* GLootUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		55338D3D20C5303B005BD5DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Guillaume Manzano";
+				TargetAttributes = {
+					55338D4420C5303B005BD5DD = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+					55338D5B20C5303B005BD5DD = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 55338D4420C5303B005BD5DD;
+					};
+					55338D6620C5303B005BD5DD = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 55338D4420C5303B005BD5DD;
+					};
+				};
+			};
+			buildConfigurationList = 55338D4020C5303B005BD5DD /* Build configuration list for PBXProject "GLoot" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 55338D3C20C5303B005BD5DD;
+			productRefGroup = 55338D4620C5303B005BD5DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				55338D4420C5303B005BD5DD /* GLoot */,
+				55338D5B20C5303B005BD5DD /* GLootTests */,
+				55338D6620C5303B005BD5DD /* GLootUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		55338D4320C5303B005BD5DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55338D5620C5303B005BD5DD /* LaunchScreen.storyboard in Resources */,
+				55338D5320C5303B005BD5DD /* Assets.xcassets in Resources */,
+				55338D4E20C5303B005BD5DD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55338D5A20C5303B005BD5DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55338D6520C5303B005BD5DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		55338D4120C5303B005BD5DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55338D4B20C5303B005BD5DD /* ViewController.swift in Sources */,
+				55338D4920C5303B005BD5DD /* AppDelegate.swift in Sources */,
+				55338D5120C5303B005BD5DD /* GLoot.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55338D5820C5303B005BD5DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55338D6120C5303B005BD5DD /* GLootTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55338D6320C5303B005BD5DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55338D6C20C5303B005BD5DD /* GLootUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		55338D5E20C5303B005BD5DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55338D4420C5303B005BD5DD /* GLoot */;
+			targetProxy = 55338D5D20C5303B005BD5DD /* PBXContainerItemProxy */;
+		};
+		55338D6920C5303B005BD5DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55338D4420C5303B005BD5DD /* GLoot */;
+			targetProxy = 55338D6820C5303B005BD5DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		55338D4C20C5303B005BD5DD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55338D4D20C5303B005BD5DD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		55338D5420C5303B005BD5DD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55338D5520C5303B005BD5DD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		55338D6E20C5303B005BD5DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		55338D6F20C5303B005BD5DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		55338D7120C5303B005BD5DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GLoot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.GManzano.GLoot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		55338D7220C5303B005BD5DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GLoot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.GManzano.GLoot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		55338D7420C5303B005BD5DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GLootTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.GManzano.GLootTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GLoot.app/GLoot";
+			};
+			name = Debug;
+		};
+		55338D7520C5303B005BD5DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GLootTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.GManzano.GLootTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GLoot.app/GLoot";
+			};
+			name = Release;
+		};
+		55338D7720C5303B005BD5DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = GLootUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.GManzano.GLootUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = GLoot;
+			};
+			name = Debug;
+		};
+		55338D7820C5303B005BD5DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = GLootUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.GManzano.GLootUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = GLoot;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		55338D4020C5303B005BD5DD /* Build configuration list for PBXProject "GLoot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55338D6E20C5303B005BD5DD /* Debug */,
+				55338D6F20C5303B005BD5DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55338D7020C5303B005BD5DD /* Build configuration list for PBXNativeTarget "GLoot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55338D7120C5303B005BD5DD /* Debug */,
+				55338D7220C5303B005BD5DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		55338D7320C5303B005BD5DD /* Build configuration list for PBXNativeTarget "GLootTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55338D7420C5303B005BD5DD /* Debug */,
+				55338D7520C5303B005BD5DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		55338D7620C5303B005BD5DD /* Build configuration list for PBXNativeTarget "GLootUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55338D7720C5303B005BD5DD /* Debug */,
+				55338D7820C5303B005BD5DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		55338D4F20C5303B005BD5DD /* GLoot.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				55338D5020C5303B005BD5DD /* GLoot.xcdatamodel */,
+			);
+			currentVersion = 55338D5020C5303B005BD5DD /* GLoot.xcdatamodel */;
+			path = GLoot.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 55338D3D20C5303B005BD5DD /* Project object */;
+}
