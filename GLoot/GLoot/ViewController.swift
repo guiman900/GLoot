@@ -11,27 +11,28 @@ import GLootNetworkLibrary
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var playerName: UITextField!
     @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var playerView: UIView!
     
     var network: GLootNetwork?
     var players: [GLootPlayer]?
+    var selectedPlayer: GLootPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.delegate = self
-        tableView.dataSource = self
         
         network = GLootNetwork()
         network?.delegate = self
         
         network?.getPlayers()
+        
+        self.initViewWithBlur()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 }
@@ -116,6 +117,10 @@ extension ViewController: UITableViewDelegate {
         return [deleteAction, editAction]
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedPlayer = self.players?[indexPath.section]
+        self.addContactView()
+    }
 }
 
 extension ViewController: UITableViewDataSource {
@@ -158,6 +163,60 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
+
+extension ViewController {
+    func initViewWithBlur()
+    {
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.regular)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        playerView.addSubview(blurEffectView)
+        blurEffectView.sendSubview(toBack: playerView)
+        playerView.sendSubview(toBack: blurEffectView)
+    }
+    
+    func addContactView()
+    {
+        self.playerName.text = selectedPlayer?.name
+        UIView.transition(with: self.view, duration: 0.3, options: UIViewAnimationOptions.transitionCrossDissolve,
+                          animations: {self.view.addSubview(self.playerView)}, completion: nil)
+        
+    }
+    
+    func removePlayerView()
+    {
+        UIView.transition(with: self.view, duration: 0.3, options: UIViewAnimationOptions.transitionCrossDissolve,
+                          animations: {self.playerView.removeFromSuperview()}, completion: nil)
+    }
+    
+    @IBAction func closePlayerView(_ sender: UIButton) {
+        self.removePlayerView()
+        self.selectedPlayer = nil
+    }
+    
+    @IBAction func saveChanges(_ sender: UIButton) {
+        self.removePlayerView()
+        
+        if let id = selectedPlayer?.id, let name = self.playerName.text {
+            self.network?.editPlayer(playerId: id, playerName: name)
+        }
+        
+        self.selectedPlayer = nil
+    }
+    
+    @IBAction func deleteUser(_ sender: UIButton) {
+        self.removePlayerView()
+
+        if let id = selectedPlayer?.id {
+            self.network?.deletePlayer(playerId: id)
+        }
+        
+        self.selectedPlayer = nil
+    }
+
+    
+}
 
 extension ViewController : GLootNetworkProtocol {
     /**
