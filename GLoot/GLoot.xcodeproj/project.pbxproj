@@ -15,6 +15,9 @@
 		55338D5620C5303B005BD5DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55338D5420C5303B005BD5DD /* LaunchScreen.storyboard */; };
 		55338D6120C5303B005BD5DD /* GLootTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55338D6020C5303B005BD5DD /* GLootTests.swift */; };
 		55338D6C20C5303B005BD5DD /* GLootUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55338D6B20C5303B005BD5DD /* GLootUITests.swift */; };
+		55338D7B20C53437005BD5DD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55338D7A20C53437005BD5DD /* Player.swift */; };
+		55338D7C20C53437005BD5DD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55338D7A20C53437005BD5DD /* Player.swift */; };
+		55338D7D20C53437005BD5DD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55338D7A20C53437005BD5DD /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,7 @@
 		55338D6720C5303B005BD5DD /* GLootUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GLootUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55338D6B20C5303B005BD5DD /* GLootUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLootUITests.swift; sourceTree = "<group>"; };
 		55338D6D20C5303B005BD5DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55338D7A20C53437005BD5DD /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 		55338D4720C5303B005BD5DD /* GLoot */ = {
 			isa = PBXGroup;
 			children = (
+				55338D7920C533F0005BD5DD /* Model */,
 				55338D4820C5303B005BD5DD /* AppDelegate.swift */,
 				55338D4A20C5303B005BD5DD /* ViewController.swift */,
 				55338D4C20C5303B005BD5DD /* Main.storyboard */,
@@ -126,6 +131,14 @@
 				55338D6D20C5303B005BD5DD /* Info.plist */,
 			);
 			path = GLootUITests;
+			sourceTree = "<group>";
+		};
+		55338D7920C533F0005BD5DD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				55338D7A20C53437005BD5DD /* Player.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55338D7B20C53437005BD5DD /* Player.swift in Sources */,
 				55338D4B20C5303B005BD5DD /* ViewController.swift in Sources */,
 				55338D4920C5303B005BD5DD /* AppDelegate.swift in Sources */,
 				55338D5120C5303B005BD5DD /* GLoot.xcdatamodeld in Sources */,
@@ -272,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55338D7C20C53437005BD5DD /* Player.swift in Sources */,
 				55338D6120C5303B005BD5DD /* GLootTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55338D7D20C53437005BD5DD /* Player.swift in Sources */,
 				55338D6C20C5303B005BD5DD /* GLootUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
