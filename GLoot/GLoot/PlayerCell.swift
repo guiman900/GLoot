@@ -1,5 +1,5 @@
 //
-//  Player.swift
+//  PlayerCell.swift
 //  GLoot
 //
 //  Created by Guillaume Manzano on 04/06/2018.
@@ -7,9 +7,8 @@
 //
 
 import Foundation
+import UIKit
 
-struct Player
-{
-    var name: String?
-    var id: String?
+class PlayerCell: UITableViewCell {
+    @IBOutlet weak var name: UILabel!
 }

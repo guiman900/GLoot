@@ -1,0 +1,10 @@
+framework module GLootNetworkLibrary {
+  umbrella header "GLootNetworkLibrary.h"
+
+  export *
+  module * { export * }
+}
+
+module GLootNetworkLibrary.Swift {
+    header "GLootNetworkLibrary-Swift.h"
+}

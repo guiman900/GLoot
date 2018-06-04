@@ -14,9 +14,13 @@
 		55338D5620C5303B005BD5DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55338D5420C5303B005BD5DD /* LaunchScreen.storyboard */; };
 		55338D6120C5303B005BD5DD /* GLootTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55338D6020C5303B005BD5DD /* GLootTests.swift */; };
 		55338D6C20C5303B005BD5DD /* GLootUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55338D6B20C5303B005BD5DD /* GLootUITests.swift */; };
-		55338D7B20C53437005BD5DD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55338D7A20C53437005BD5DD /* Player.swift */; };
-		55338D7C20C53437005BD5DD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55338D7A20C53437005BD5DD /* Player.swift */; };
-		55338D7D20C53437005BD5DD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55338D7A20C53437005BD5DD /* Player.swift */; };
+		5581065720C57CDF0050D291 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5581065520C57CDF0050D291 /* Alamofire.framework */; };
+		5581065820C57CDF0050D291 /* GLootNetworkLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5581065620C57CDF0050D291 /* GLootNetworkLibrary.framework */; };
+		5581065920C57F1D0050D291 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5581065520C57CDF0050D291 /* Alamofire.framework */; };
+		5581065A20C57F1D0050D291 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5581065520C57CDF0050D291 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5581065B20C57F1D0050D291 /* GLootNetworkLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5581065620C57CDF0050D291 /* GLootNetworkLibrary.framework */; };
+		5581065C20C57F1D0050D291 /* GLootNetworkLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5581065620C57CDF0050D291 /* GLootNetworkLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5581065F20C5874C0050D291 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5581065E20C5874C0050D291 /* PlayerCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5550B77D20C578E500A0DB10 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5581065A20C57F1D0050D291 /* Alamofire.framework in Embed Frameworks */,
+				5581065C20C57F1D0050D291 /* GLootNetworkLibrary.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		55338D4520C5303B005BD5DD /* GLoot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GLoot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55338D4820C5303B005BD5DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,7 +69,9 @@
 		55338D6720C5303B005BD5DD /* GLootUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GLootUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55338D6B20C5303B005BD5DD /* GLootUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLootUITests.swift; sourceTree = "<group>"; };
 		55338D6D20C5303B005BD5DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		55338D7A20C53437005BD5DD /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		5581065520C57CDF0050D291 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Alamofire.framework; sourceTree = "<group>"; };
+		5581065620C57CDF0050D291 /* GLootNetworkLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GLootNetworkLibrary.framework; sourceTree = "<group>"; };
+		5581065E20C5874C0050D291 /* PlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +79,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5581065720C57CDF0050D291 /* Alamofire.framework in Frameworks */,
+				5581065B20C57F1D0050D291 /* GLootNetworkLibrary.framework in Frameworks */,
+				5581065920C57F1D0050D291 /* Alamofire.framework in Frameworks */,
+				5581065820C57CDF0050D291 /* GLootNetworkLibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +106,8 @@
 		55338D3C20C5303B005BD5DD = {
 			isa = PBXGroup;
 			children = (
+				5581065520C57CDF0050D291 /* Alamofire.framework */,
+				5581065620C57CDF0050D291 /* GLootNetworkLibrary.framework */,
 				55338D4720C5303B005BD5DD /* GLoot */,
 				55338D5F20C5303B005BD5DD /* GLootTests */,
 				55338D6A20C5303B005BD5DD /* GLootUITests */,
@@ -101,7 +128,7 @@
 		55338D4720C5303B005BD5DD /* GLoot */ = {
 			isa = PBXGroup;
 			children = (
-				55338D7920C533F0005BD5DD /* Model */,
+				5581065D20C587380050D291 /* Models */,
 				55338D4820C5303B005BD5DD /* AppDelegate.swift */,
 				55338D4A20C5303B005BD5DD /* ViewController.swift */,
 				55338D4C20C5303B005BD5DD /* Main.storyboard */,
@@ -130,12 +157,12 @@
 			path = GLootUITests;
 			sourceTree = "<group>";
 		};
-		55338D7920C533F0005BD5DD /* Model */ = {
+		5581065D20C587380050D291 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				55338D7A20C53437005BD5DD /* Player.swift */,
+				5581065E20C5874C0050D291 /* PlayerCell.swift */,
 			);
-			name = Model;
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +175,7 @@
 				55338D4120C5303B005BD5DD /* Sources */,
 				55338D4220C5303B005BD5DD /* Frameworks */,
 				55338D4320C5303B005BD5DD /* Resources */,
+				5550B77D20C578E500A0DB10 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -272,7 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55338D7B20C53437005BD5DD /* Player.swift in Sources */,
+				5581065F20C5874C0050D291 /* PlayerCell.swift in Sources */,
 				55338D4B20C5303B005BD5DD /* ViewController.swift in Sources */,
 				55338D4920C5303B005BD5DD /* AppDelegate.swift in Sources */,
 			);
@@ -282,7 +310,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55338D7C20C53437005BD5DD /* Player.swift in Sources */,
 				55338D6120C5303B005BD5DD /* GLootTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,7 +318,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55338D7D20C53437005BD5DD /* Player.swift in Sources */,
 				55338D6C20C5303B005BD5DD /* GLootUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,6 +456,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GLootNetworkLibrary/build/Release-iphoneos",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = GLoot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.GManzano.GLoot;
@@ -442,6 +473,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GLootNetworkLibrary/build/Release-iphoneos",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = GLoot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.GManzano.GLoot;

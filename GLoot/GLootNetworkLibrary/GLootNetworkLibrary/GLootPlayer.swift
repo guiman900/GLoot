@@ -11,14 +11,14 @@ import Foundation
 /**
  Player model
  */
-struct GLootPlayer {
+public struct GLootPlayer {
     // - MARK: properties
     
     /// player Id.
-    var id: String
+    public var id: String
     
     /// player name.
-    var name: String
+    public var name: String
 }
 
 extension GLootPlayer {

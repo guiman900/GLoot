@@ -16,7 +16,7 @@ public class GLootNetwork {
     // - Mark: Properties
     
     /// delegate to retrieve the network responses.
-    var delegate: GLootNetworkProtocol?
+    public var delegate: GLootNetworkProtocol?
     
     // - Mark: Methods
     

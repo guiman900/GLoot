@@ -11,7 +11,7 @@ import Foundation
 /**
  GLootNetworkProtocol is used to retrieve the network results.
  */
-protocol GLootNetworkProtocol: class {
+public protocol GLootNetworkProtocol {
     // - MARK: Methods
     
     /**
