@@ -10,7 +10,6 @@
 		55338D4920C5303B005BD5DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55338D4820C5303B005BD5DD /* AppDelegate.swift */; };
 		55338D4B20C5303B005BD5DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55338D4A20C5303B005BD5DD /* ViewController.swift */; };
 		55338D4E20C5303B005BD5DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55338D4C20C5303B005BD5DD /* Main.storyboard */; };
-		55338D5120C5303B005BD5DD /* GLoot.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55338D4F20C5303B005BD5DD /* GLoot.xcdatamodeld */; };
 		55338D5320C5303B005BD5DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55338D5220C5303B005BD5DD /* Assets.xcassets */; };
 		55338D5620C5303B005BD5DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55338D5420C5303B005BD5DD /* LaunchScreen.storyboard */; };
 		55338D6120C5303B005BD5DD /* GLootTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55338D6020C5303B005BD5DD /* GLootTests.swift */; };
@@ -42,7 +41,6 @@
 		55338D4820C5303B005BD5DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55338D4A20C5303B005BD5DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		55338D4D20C5303B005BD5DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		55338D5020C5303B005BD5DD /* GLoot.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GLoot.xcdatamodel; sourceTree = "<group>"; };
 		55338D5220C5303B005BD5DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55338D5520C5303B005BD5DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55338D5720C5303B005BD5DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 				55338D5220C5303B005BD5DD /* Assets.xcassets */,
 				55338D5420C5303B005BD5DD /* LaunchScreen.storyboard */,
 				55338D5720C5303B005BD5DD /* Info.plist */,
-				55338D4F20C5303B005BD5DD /* GLoot.xcdatamodeld */,
 			);
 			path = GLoot;
 			sourceTree = "<group>";
@@ -278,7 +275,6 @@
 				55338D7B20C53437005BD5DD /* Player.swift in Sources */,
 				55338D4B20C5303B005BD5DD /* ViewController.swift in Sources */,
 				55338D4920C5303B005BD5DD /* AppDelegate.swift in Sources */,
-				55338D5120C5303B005BD5DD /* GLoot.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +523,7 @@
 				55338D7220C5303B005BD5DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		55338D7320C5303B005BD5DD /* Build configuration list for PBXNativeTarget "GLootTests" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +532,7 @@
 				55338D7520C5303B005BD5DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		55338D7620C5303B005BD5DD /* Build configuration list for PBXNativeTarget "GLootUITests" */ = {
 			isa = XCConfigurationList;
@@ -543,21 +541,9 @@
 				55338D7820C5303B005BD5DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		55338D4F20C5303B005BD5DD /* GLoot.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				55338D5020C5303B005BD5DD /* GLoot.xcdatamodel */,
-			);
-			currentVersion = 55338D5020C5303B005BD5DD /* GLoot.xcdatamodel */;
-			path = GLoot.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 55338D3D20C5303B005BD5DD /* Project object */;
 }

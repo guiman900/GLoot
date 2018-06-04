@@ -34,7 +34,7 @@ public class GLootNetwork {
             return
         }
         
-        Alamofire.request(url, method: .get, parameters: ["include_docs": "true"]).validate()
+        Alamofire.request(url, method: .get, parameters: nil).validate()
             .responseJSON
             {
                 response in
@@ -82,7 +82,7 @@ public class GLootNetwork {
             return
         }
         
-        Alamofire.request(url, method: .get, parameters: ["include_docs": "true"]).validate()
+        Alamofire.request(url, method: .get, parameters: nil).validate()
             .responseJSON
             {
                 response in
@@ -103,7 +103,7 @@ public class GLootNetwork {
         }
         
         
-        Alamofire.request(url, method: .post, parameters: ["include_docs": "true", "name": playerName], encoding: JSONEncoding.default).validate()
+        Alamofire.request(url, method: .post, parameters: ["name": playerName], encoding: JSONEncoding.default).validate()
             .responseJSON
             {
                 response in
@@ -123,7 +123,7 @@ public class GLootNetwork {
         }
         
         
-        Alamofire.request(url, method: .delete, parameters: ["include_docs": "true"]).validate()
+        Alamofire.request(url, method: .delete, parameters: nil).validate()
             .responseJSON
             {
                 response in
@@ -143,7 +143,7 @@ public class GLootNetwork {
             return
         }
         
-        Alamofire.request(url, method: .put, parameters: ["include_docs": "true", "name": playerName], encoding: JSONEncoding.default).validate()
+        Alamofire.request(url, method: .put, parameters: ["name": playerName], encoding: JSONEncoding.default).validate()
             .responseJSON
             {
                 response in
