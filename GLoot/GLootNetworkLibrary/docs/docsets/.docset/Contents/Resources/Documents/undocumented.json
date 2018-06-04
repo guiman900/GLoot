@@ -1,0 +1,40 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/guillaumemanzano/Desktop/GitHubGLoot/GLoot/GLoot/GLootNetworkLibrary/GLootNetworkLibrary/Constants.swift",
+      "line": 11,
+      "symbol": "Constants",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/guillaumemanzano/Desktop/GitHubGLoot/GLoot/GLoot/GLootNetworkLibrary/GLootNetworkLibrary/Constants.swift",
+      "line": 12,
+      "symbol": "Constants.playerBaseUrl",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/guillaumemanzano/Desktop/GitHubGLoot/GLoot/GLoot/GLootNetworkLibrary/GLootNetworkLibrary/Constants.swift",
+      "line": 13,
+      "symbol": "Constants.playersBaseUrl",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/guillaumemanzano/Desktop/GitHubGLoot/GLoot/GLoot/GLootNetworkLibrary/GLootNetworkLibrary/SerializationError.swift",
+      "line": 15,
+      "symbol": "SerializationError.missing",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/guillaumemanzano/Desktop/GitHubGLoot/GLoot/GLoot/GLootNetworkLibrary/GLootNetworkLibrary/SerializationError.swift",
+      "line": 16,
+      "symbol": "SerializationError.invalid",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/guillaumemanzano/Desktop/GitHubGLoot/GLoot/GLoot/GLootNetworkLibrary"
+}
