@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Sf-LC-jm5">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <color key="backgroundColor" red="0.1258049309" green="0.1247010976" blue="0.188359201" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -61,16 +61,32 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Ymy-lf-ZLD"/>
                                 </connections>
                             </tableView>
+                            <tabBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfd-UD-Xzu">
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem badgeValue="New" systemItem="contacts" id="ef2-in-Xmr"/>
+                                </items>
+                                <color key="barTintColor" red="0.1258049309" green="0.1247010976" blue="0.188359201" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="selectedImageTintColor" red="0.29464956209999998" green="0.29140263189999999" blue="0.44599324280000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="v7g-nD-2Fz"/>
+                                </connections>
+                            </tabBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="8Sf-LC-jm5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2Lg-5y-MN5"/>
+                            <constraint firstItem="bfd-UD-Xzu" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="4vm-Lo-djW"/>
+                            <constraint firstItem="bfd-UD-Xzu" firstAttribute="top" secondItem="8Sf-LC-jm5" secondAttribute="bottom" id="AxR-ho-2nN"/>
                             <constraint firstItem="8Sf-LC-jm5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Bi3-wh-3wc"/>
                             <constraint firstItem="8Sf-LC-jm5" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="I0E-wQ-s1l"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8Sf-LC-jm5" secondAttribute="bottom" id="TG4-rX-sNW"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bfd-UD-Xzu" secondAttribute="bottom" id="Pbe-ud-Jd3"/>
+                            <constraint firstItem="bfd-UD-Xzu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dg5-XV-uVb"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="tabBar" destination="bfd-UD-Xzu" id="K59-k1-2YA"/>
                         <outlet property="tableView" destination="8Sf-LC-jm5" id="tiM-mR-Dqs"/>
                     </connections>
                 </viewController>

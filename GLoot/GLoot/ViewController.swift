@@ -11,7 +11,7 @@ import GLootNetworkLibrary
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var tableView: UITableView!
     
     var network: GLootNetwork?
@@ -27,10 +27,6 @@ class ViewController: UIViewController {
         network?.delegate = self
         
         network?.getPlayers()
-    
-        let rightBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "EditImage"), style: .done, target: self, action: #selector(addTapped))
-        
-        self.navigationItem.rightBarButtonItem = rightBarButtonItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,8 +34,30 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func addTapped(sender: AnyObject) {
-    
+}
+
+extension ViewController: UITabBarDelegate {
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem)
+    {
+            let alert = UIAlertController(title: "Add User", message: "Enter a name for the new player.", preferredStyle: .alert)
+            
+            alert.addTextField { (textField) in
+                textField.text = ""
+            }
+            
+            alert.addAction(UIAlertAction(title: "Create", style: .default, handler: { action in
+                
+                    guard let text = alert.textFields?[0].text else {
+                        self.network?.createPlayer(playerName: "")
+                        return
+                    }
+                    self.network?.createPlayer(playerName: text)
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
+            tabBar.selectedItem = nil
     }
 }
 
