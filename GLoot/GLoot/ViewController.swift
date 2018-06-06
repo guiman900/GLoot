@@ -25,12 +25,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var playerView: UIView!
     
     /// GLoot network
-    var network: GLootNetwork?
+    internal var network: GLootNetwork?
     
     /// List of players
-    var players: [GLootPlayer]?
+    internal var players: [GLootPlayer]?
     /// selected user on the playerView
-    var selectedPlayer: GLootPlayer?
+    internal var selectedPlayer: GLootPlayer?
     
     /// color of the status bar
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -71,7 +71,7 @@ extension ViewController: UITabBarDelegate {
      - Parameter tabBar: The tab bar that is being customized.
      - Parameter item: The tab bar item that was selected.
      */
-    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem)
+    internal func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem)
     {
             let alert = UIAlertController(title: "Add User", message: "Enter a name for the new player.", preferredStyle: .alert)
             
@@ -102,7 +102,7 @@ extension ViewController: UITableViewDelegate {
      - Parameter tableView: The table-view object requesting this information.
      - Parameter indexPath: An index path locating a row in tableView.
      */
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    internal func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
@@ -113,7 +113,7 @@ extension ViewController: UITableViewDelegate {
      - Parameter editingStyle: The cell editing style corresponding to a insertion or deletion requested for the row specified by indexPath. Possible editing styles are insert or delete.
      - Parameter indexPath: An index path locating the row in tableView.
     */
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    internal func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
     }
     
@@ -123,7 +123,7 @@ extension ViewController: UITableViewDelegate {
      - Parameter tableView: The table view object requesting this information.
      - Parameter indexPath: The index path of the row.
      */
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    internal func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let index = indexPath.section
         
         let deleteAction = UITableViewRowAction(style: .default, title: "Delete") {action in
@@ -177,7 +177,7 @@ extension ViewController: UITableViewDelegate {
      - Parameter tableView: A table-view object informing the delegate about the new row selection.
      - Parameter indexPath: An index path locating the new selected row in tableView.
     */
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectedPlayer = self.players?[indexPath.section]
         self.addContactView()
     }
@@ -192,7 +192,7 @@ extension ViewController: UITableViewDataSource {
      
      - Parameter tableView: An object representing the table view requesting this information.
     */
-    public func numberOfSections(in tableView: UITableView) -> Int {
+    internal func numberOfSections(in tableView: UITableView) -> Int {
         guard let players = self.players else {
             return 0
         }
@@ -205,7 +205,7 @@ extension ViewController: UITableViewDataSource {
      - Parameter tableView: The table-view object requesting this information.
      - Parameter section: An index number identifying a section in tableView.
     */
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.players == nil {
             return 0
         }
@@ -218,7 +218,7 @@ extension ViewController: UITableViewDataSource {
      - Parameter tableView: A table-view object requesting the cell.
      - Parameter indexPath: An index path locating a row in tableView.
      */
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerCell", for: indexPath) as? PlayerCell else {
             return UITableViewCell()
         }
@@ -239,7 +239,7 @@ extension ViewController: UITableViewDataSource {
      - Parameter tableView: The table-view object requesting this information.
      - Parameter section: An index number identifying a section of tableView .
     */
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    internal func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 10
     }
 
@@ -249,7 +249,7 @@ extension ViewController: UITableViewDataSource {
      - Parameter tableView: The table-view object asking for the view object.
      - Parameter section: An index number identifying a section of tableView .
     */
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    internal func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
         headerView.backgroundColor = UIColor.clear
         return headerView
@@ -264,7 +264,7 @@ extension ViewController {
     /**
      Create a blut effect on the playerView.
      */
-    func initViewWithBlur()
+    internal func initViewWithBlur()
     {
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.regular)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -278,7 +278,7 @@ extension ViewController {
     /**
      Add the playerView with a transition
      */
-    func addContactView()
+    internal func addContactView()
     {
         self.playerName.text = selectedPlayer?.name
         UIView.transition(with: self.view, duration: 0.3, options: UIViewAnimationOptions.transitionCrossDissolve,
@@ -289,7 +289,7 @@ extension ViewController {
     /**
      remove the playerView with a transition
      */
-    func removePlayerView()
+    internal func removePlayerView()
     {
         UIView.transition(with: self.view, duration: 0.3, options: UIViewAnimationOptions.transitionCrossDissolve,
                           animations: {self.playerView.removeFromSuperview()}, completion: nil)
@@ -347,7 +347,7 @@ extension ViewController : GLootNetworkProtocol {
      
      - Parameter players: player list.
      */
-    public func playersReceived(players: [GLootNetworkLibrary.GLootPlayer])
+    internal func playersReceived(players: [GLootNetworkLibrary.GLootPlayer])
     {
         print(players)
         self.players = players
@@ -359,7 +359,7 @@ extension ViewController : GLootNetworkProtocol {
      
      - Parameter player: the player.
      */
-    public func playerReceived(player: GLootNetworkLibrary.GLootPlayer)
+    internal func playerReceived(player: GLootNetworkLibrary.GLootPlayer)
     {
         print(player)
     }
@@ -369,7 +369,7 @@ extension ViewController : GLootNetworkProtocol {
      
      - Parameter player: the player created.
      */
-    public func playerCreated(player: GLootNetworkLibrary.GLootPlayer)
+    internal func playerCreated(player: GLootNetworkLibrary.GLootPlayer)
     {
         print(player)
         self.players?.append(player)
@@ -381,7 +381,7 @@ extension ViewController : GLootNetworkProtocol {
      
      - Parameter player: the player edited.
      */
-    public func playerEdited(player: GLootNetworkLibrary.GLootPlayer)
+    internal func playerEdited(player: GLootNetworkLibrary.GLootPlayer)
     {
         print(player)
         if let index = self.players?.index(where:  { $0.id == player.id }) {
@@ -395,7 +395,7 @@ extension ViewController : GLootNetworkProtocol {
      
      - Parameter player: the player deleted.
      */
-    public func playerDeleted(player: GLootNetworkLibrary.GLootPlayer)
+    internal func playerDeleted(player: GLootNetworkLibrary.GLootPlayer)
     {
         print(player)
         if let index = self.players?.index(where:  { $0.id == player.id }) {
@@ -409,7 +409,7 @@ extension ViewController : GLootNetworkProtocol {
      
      - Parameter error: error description.
      */
-    public func networkError(error: String)
+    internal func networkError(error: String)
     {
         print(error)
     }
