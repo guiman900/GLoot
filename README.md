@@ -11,16 +11,6 @@ clone the development branch and run the project
 ## Built With
 Almofire - Network Library
 
-## Contributing
-Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
-
-RedGiant: Trial version of the trapcode Suite for the intro video
-
-Icons : [Add user icon](https://www.flaticon.com/free-icon/new-user_72648#term=add%20user&page=1&position=4)
-[Save user](https://www.flaticon.com/free-icon/floppy-disk_784304#term=save&page=2&position=50)
-[Bin Icon](https://www.flaticon.com/free-icon/waste-bin_70388#term=bin&page=1&position=14)
-[Cancel icon](https://www.flaticon.com/free-icon/cancel_128397#term=cancel&page=1&position=16)
-
 ## Versioning
 I used GitHub for versioning. For the versions available, see the tags on this repository.
 
@@ -28,6 +18,13 @@ I used GitHub for versioning. For the versions available, see the tags on this r
 Guillaume Manzano  - Developer
 
 ## License
+RedGiant: Trial version of the trapcode Suite for the intro video
+
+Icons : [Add user icon](https://www.flaticon.com/free-icon/new-user_72648#term=add%20user&page=1&position=4)
+[Save user](https://www.flaticon.com/free-icon/floppy-disk_784304#term=save&page=2&position=50)
+[Bin Icon](https://www.flaticon.com/free-icon/waste-bin_70388#term=bin&page=1&position=14)
+[Cancel icon](https://www.flaticon.com/free-icon/cancel_128397#term=cancel&page=1&position=16)
+
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
 ## Documentation
