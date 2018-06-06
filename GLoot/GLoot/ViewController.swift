@@ -15,6 +15,7 @@ import GLootNetworkLibrary
 class ViewController: UIViewController {
     // - Mark: properties
 
+    @IBOutlet weak var playerImage: UIImageView!
     /// player name, used on the player view for edit.
     @IBOutlet weak var playerName: UITextField!
     /// tab bar containing the add player button
@@ -273,6 +274,14 @@ extension ViewController {
         playerView.addSubview(blurEffectView)
         blurEffectView.sendSubview(toBack: playerView)
         playerView.sendSubview(toBack: blurEffectView)
+        
+        /* resize the playerView for the Ipad / Iphone Screen */
+        var rect :CGRect = self.view.frame
+        rect.origin.x = 0
+        rect.origin.y = 0
+        self.playerView.frame = rect
+        
+        self.playerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
     
     /**
