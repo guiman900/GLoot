@@ -105,6 +105,10 @@
                                 <rect key="frame" x="0.0" y="614" width="375" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bf-8x-Rll">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.1258049309" green="0.1247010976" blue="0.188359201" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -114,12 +118,16 @@
                             <constraint firstItem="m3M-gN-mDx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="95O-vY-lqB"/>
                             <constraint firstItem="bfd-UD-Xzu" firstAttribute="top" secondItem="8Sf-LC-jm5" secondAttribute="bottom" id="AxR-ho-2nN"/>
                             <constraint firstItem="8Sf-LC-jm5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="47" id="Bi3-wh-3wc"/>
+                            <constraint firstItem="8bf-8x-Rll" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="DXs-PB-vAh"/>
                             <constraint firstItem="bfd-UD-Xzu" firstAttribute="top" secondItem="1XA-vy-rmV" secondAttribute="bottom" id="HuG-Oh-Xe7"/>
                             <constraint firstItem="8Sf-LC-jm5" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="I0E-wQ-s1l"/>
                             <constraint firstItem="m3M-gN-mDx" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="JDE-oP-ga4"/>
+                            <constraint firstItem="8bf-8x-Rll" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mal-sL-17E"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bfd-UD-Xzu" secondAttribute="bottom" id="Pbe-ud-Jd3"/>
                             <constraint firstItem="1XA-vy-rmV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TZt-bg-nfY"/>
+                            <constraint firstItem="8bf-8x-Rll" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Wgh-Xq-RaK"/>
                             <constraint firstItem="bfd-UD-Xzu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dg5-XV-uVb"/>
+                            <constraint firstItem="8bf-8x-Rll" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="kEI-1x-i6H"/>
                             <constraint firstItem="1XA-vy-rmV" firstAttribute="top" secondItem="8Sf-LC-jm5" secondAttribute="bottom" constant="-2" id="p7S-Jc-6N6"/>
                             <constraint firstItem="1XA-vy-rmV" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="pkV-CL-oM8"/>
                         </constraints>
@@ -131,6 +139,7 @@
                         <outlet property="playerView" destination="GkU-Hk-pjF" id="lWj-MA-8GA"/>
                         <outlet property="tabBar" destination="bfd-UD-Xzu" id="K59-k1-2YA"/>
                         <outlet property="tableView" destination="8Sf-LC-jm5" id="tiM-mR-Dqs"/>
+                        <outlet property="videoPlayerView" destination="8bf-8x-Rll" id="npq-DE-CwO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

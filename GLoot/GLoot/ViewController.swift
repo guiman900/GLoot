@@ -6,6 +6,7 @@
 //  Copyright © 2018 Guillaume Manzano. All rights reserved.
 //
 
+import AVFoundation
 import UIKit
 import GLootNetworkLibrary
 
@@ -24,6 +25,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     /// player view, displaying the player information / edit the player name
     @IBOutlet weak var playerView: UIView!
+    /// video player view
+    @IBOutlet weak var videoPlayerView: UIView!
     
     /// GLoot network
     internal var network: GLootNetwork?
@@ -38,6 +41,10 @@ class ViewController: UIViewController {
         return .lightContent
     }
     
+    /// video player for the transition
+    var videoPlayer: AVPlayer?
+    
+    
     // - Mark: Methods
     /**
      Called after the controller's view is loaded into memory.
@@ -51,7 +58,8 @@ class ViewController: UIViewController {
         network?.getPlayers()
         
         self.initViewWithBlur()
-        
+        playVideo()
+
     }
 
     /**
@@ -59,6 +67,33 @@ class ViewController: UIViewController {
     */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    /**
+     Play the video for the transition
+    */
+    private func playVideo() {
+        guard let path = Bundle.main.path(forResource: "page", ofType:"mp4") else {
+            debugPrint("video.m4v not found")
+            return
+            
+        }
+        
+        self.videoPlayer = AVPlayer(url: URL(fileURLWithPath: path))
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.playerDidFinishPlaying),
+                                               name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
+        
+        let playerLayer = AVPlayerLayer(player: videoPlayer)
+        playerLayer.frame = self.view.frame
+        self.videoPlayerView.layer.addSublayer(playerLayer)
+        videoPlayer?.play()
+            
+    }
+    
+    func playerDidFinishPlaying(note: NSNotification) {
+        UIView.transition(with: self.view, duration: 0.3, options: UIViewAnimationOptions.transitionCrossDissolve,
+                          animations: {self.videoPlayerView.removeFromSuperview()}, completion: nil)
     }
 }
 
