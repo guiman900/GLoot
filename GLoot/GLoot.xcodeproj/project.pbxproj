@@ -101,13 +101,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		55338D3C20C5303B005BD5DD = {
+		551AA50920C8AB790051A396 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
 				5581065520C57CDF0050D291 /* Alamofire.framework */,
 				5581065620C57CDF0050D291 /* GLootNetworkLibrary.framework */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
+		55338D3C20C5303B005BD5DD = {
+			isa = PBXGroup;
+			children = (
 				55338D4720C5303B005BD5DD /* GLoot */,
 				55338D4620C5303B005BD5DD /* Products */,
+				551AA50920C8AB790051A396 /* Framework */,
 			);
 			sourceTree = "<group>";
 		};
