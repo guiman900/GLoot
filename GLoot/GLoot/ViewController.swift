@@ -11,10 +11,10 @@ import UIKit
 import GLootNetworkLibrary
 
 /**
- TableView cell used on the ViewController
+ Main view controller managing the player list and the edit player view
  */
 class ViewController: UIViewController {
-    // - Mark: properties
+    // - MARK: properties
 
     @IBOutlet weak var playerImage: UIImageView!
     /// player name, used on the player view for edit.
@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var videoPlayerView: UIView!
     
     /// refresh control added on the tableview for the pull to refresh
-    lazy var refreshControl: UIRefreshControl = {
+    internal lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action:
             #selector(ViewController.handleRefresh(_:)),
@@ -57,7 +57,7 @@ class ViewController: UIViewController {
     
     
     
-    // - Mark: Methods
+    // - MARK: Methods
     /**
      Called after the controller's view is loaded into memory.
     */

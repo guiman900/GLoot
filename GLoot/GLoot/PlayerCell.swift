@@ -13,7 +13,7 @@ import UIKit
  TableView cell used on the ViewController
  */
 class PlayerCell: UITableViewCell {
-    // - Mark: properties
+    // - MARK: properties
     
     /// Player name.
     @IBOutlet weak var name: UILabel!
