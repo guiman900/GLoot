@@ -28,6 +28,17 @@ class ViewController: UIViewController {
     /// video player view
     @IBOutlet weak var videoPlayerView: UIView!
     
+    /// refresh control added on the tableview for the pull to refresh
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action:
+            #selector(ViewController.handleRefresh(_:)),
+                                 for: UIControlEvents.valueChanged)
+        refreshControl.tintColor = UIColor.white
+        
+        return refreshControl
+    }()
+    
     /// GLoot network
     internal var network: GLootNetwork?
     
@@ -45,6 +56,7 @@ class ViewController: UIViewController {
     var videoPlayer: AVPlayer?
     
     
+    
     // - Mark: Methods
     /**
      Called after the controller's view is loaded into memory.
@@ -58,6 +70,8 @@ class ViewController: UIViewController {
         network?.getPlayers()
         
         self.initViewWithBlur()
+        self.tableView.addSubview(self.refreshControl)
+
         playVideo()
 
     }
@@ -91,9 +105,19 @@ class ViewController: UIViewController {
             
     }
     
+    /**
+     method trigered when the video finished
+    */
     func playerDidFinishPlaying(note: NSNotification) {
         UIView.transition(with: self.view, duration: 0.3, options: UIViewAnimationOptions.transitionCrossDissolve,
                           animations: {self.videoPlayerView.removeFromSuperview()}, completion: nil)
+    }
+    
+    /**
+     pull to refresh, reload the users from the server.
+    */
+    func handleRefresh(_ refreshControl: UIRefreshControl) {
+        self.network?.getPlayers()
     }
 }
 
@@ -163,48 +187,13 @@ extension ViewController: UITableViewDelegate {
         let index = indexPath.section
         
         let deleteAction = UITableViewRowAction(style: .default, title: "Delete") {action in
-            let alert = UIAlertController(title: "Delete Player", message: "Are you sure you want to delete this player?", preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
-                
-                if let player = self.players?[index] {
-                    self.network?.deletePlayer(playerId: player.id)
-                }
-            }))
-            
-            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
-            
-            self.present(alert, animated: true)
+            if let player = self.players?[index] {
+                self.createDeleteAlert(player: player)
+            }
         }
         deleteAction.backgroundColor = UIColor(red: 32/255, green: 32/255, blue: 48/255, alpha: 1)
 
-        
-        let editAction = UITableViewRowAction(style: .normal, title: "Edit") {action in
-            let alert = UIAlertController(title: "Edit Player", message: "Enter a new name for the player.", preferredStyle: .alert)
-            
-            alert.addTextField { (textField) in
-                textField.text = ""
-            }
-            
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
-                
-                if let player = self.players?[index] {
-                    guard let text = alert.textFields?[0].text else {
-                        self.network?.editPlayer(playerId: player.id, playerName: "")
-                        return
-                    }
-                    self.network?.editPlayer(playerId: player.id, playerName: text)
-                }
-            }))
-            
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-            
-            self.present(alert, animated: true)
-        }
-        
-        editAction.backgroundColor = UIColor(red: 32/255, green: 32/255, blue: 48/255, alpha: 1)
-
-        return [deleteAction, editAction]
+        return [deleteAction]
     }
 
     /**
@@ -214,8 +203,10 @@ extension ViewController: UITableViewDelegate {
      - Parameter indexPath: An index path locating the new selected row in tableView.
     */
     internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.selectedPlayer = self.players?[indexPath.section]
-        self.addPlayerView()
+        guard let player = self.players?[indexPath.section] else {
+            return
+        }
+        self.network?.getPlayer(playerId: player.id)
     }
     
 }
@@ -371,15 +362,24 @@ extension ViewController {
      - Parameter sender: The delete button.
      */
     @IBAction func deleteUser(_ sender: UIButton) {
-        self.removePlayerView()
 
-        if let id = selectedPlayer?.id {
-            self.network?.deletePlayer(playerId: id)
+        if let selectedPlayer = self.selectedPlayer {
+            self.createDeleteAlert(player: selectedPlayer)
         }
-        
-        self.selectedPlayer = nil
     }
 
+    internal func createDeleteAlert(player: GLootPlayer)
+    {
+        let alert = UIAlertController(title: "Delete Player", message: "Are you sure you want to delete this player?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                self.network?.deletePlayer(playerId: player.id)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true)
+    }
     
 }
 
@@ -394,9 +394,12 @@ extension ViewController : GLootNetworkProtocol {
      */
     internal func playersReceived(players: [GLootNetworkLibrary.GLootPlayer])
     {
-        print(players)
         self.players = players
         tableView.reloadData()
+        
+        if self.refreshControl.isRefreshing {
+            self.refreshControl.endRefreshing()
+        }
     }
 
     /**
@@ -406,7 +409,12 @@ extension ViewController : GLootNetworkProtocol {
      */
     internal func playerReceived(player: GLootNetworkLibrary.GLootPlayer)
     {
-        print(player)
+        if let index = self.players?.index(where:  { $0.id == player.id }) {
+            self.players?[index].name = player.name
+            tableView.reloadData()
+        }
+        self.selectedPlayer = player
+        self.addPlayerView()
     }
 
     /**
@@ -417,6 +425,7 @@ extension ViewController : GLootNetworkProtocol {
     internal func playerCreated(player: GLootNetworkLibrary.GLootPlayer)
     {
         print(player)
+        
         self.players?.append(player)
         tableView.reloadData()
     }
@@ -443,6 +452,12 @@ extension ViewController : GLootNetworkProtocol {
     internal func playerDeleted(player: GLootNetworkLibrary.GLootPlayer)
     {
         print(player)
+        
+        if self.selectedPlayer != nil {
+            self.removePlayerView()
+            self.selectedPlayer = nil
+        }
+        
         if let index = self.players?.index(where:  { $0.id == player.id }) {
             self.players?.remove(at: index)
             tableView.reloadData()
