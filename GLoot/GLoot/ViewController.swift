@@ -32,6 +32,11 @@ class ViewController: UIViewController {
     /// selected user on the playerView
     var selectedPlayer: GLootPlayer?
     
+    /// color of the status bar
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // - Mark: Methods
     /**
      Called after the controller's view is loaded into memory.
