@@ -109,7 +109,7 @@ extension ViewController: UITabBarDelegate {
      */
     internal func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem)
     {
-            let alert = UIAlertController(title: "Add User", message: "Enter a name for the new player.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Add Player", message: "Enter a name for the new player.", preferredStyle: .alert)
             
             alert.addTextField { (textField) in
                 textField.text = ""
@@ -180,7 +180,7 @@ extension ViewController: UITableViewDelegate {
 
         
         let editAction = UITableViewRowAction(style: .normal, title: "Edit") {action in
-            let alert = UIAlertController(title: "Edit User", message: "Enter a new name for the player.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Edit Player", message: "Enter a new name for the player.", preferredStyle: .alert)
             
             alert.addTextField { (textField) in
                 textField.text = ""
@@ -215,8 +215,9 @@ extension ViewController: UITableViewDelegate {
     */
     internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectedPlayer = self.players?[indexPath.section]
-        self.addContactView()
+        self.addPlayerView()
     }
+    
 }
 
 /**
@@ -322,7 +323,7 @@ extension ViewController {
     /**
      Add the playerView with a transition
      */
-    internal func addContactView()
+    internal func addPlayerView()
     {
         self.playerName.text = selectedPlayer?.name
         UIView.transition(with: self.view, duration: 0.3, options: UIViewAnimationOptions.transitionCrossDissolve,
