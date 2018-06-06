@@ -40,6 +40,7 @@ double click on index.html
 
 ### GLootNetwork Documentation
 The GLootNetwork documentation is already available on the doc folder inside the GLootNetworkLibrary folder.
+
 If you need to generate the documentation follow this steps.
 
 ```
@@ -51,5 +52,7 @@ double click on index.html
 
 ## Tests
 The tests are available on the GLootNetworkLibrary project.
+
 Open GLootNetworkLibrary project on XCode and open the file GLootNetworkLibraryTests.
+
 Inside the GLootNetworkLibraryTests click on the button on the righ of the method testExample.
