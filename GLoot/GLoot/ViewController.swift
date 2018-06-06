@@ -88,7 +88,7 @@ class ViewController: UIViewController {
     */
     private func playVideo() {
         guard let path = Bundle.main.path(forResource: "page", ofType:"mp4") else {
-            debugPrint("video.m4v not found")
+            debugPrint("video not found")
             return
             
         }
@@ -133,13 +133,18 @@ extension ViewController: UITabBarDelegate {
      */
     internal func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem)
     {
-            let alert = UIAlertController(title: "Add Player", message: "Enter a name for the new player.", preferredStyle: .alert)
+            let alertTitle = NSLocalizedString("AddAlertTitle", comment: "")
+            let alertMessage = NSLocalizedString("AddAlertMessage", comment: "")
+            let createButton = NSLocalizedString("CreateButton", comment: "")
+            let cancelButton = NSLocalizedString("CancelButton", comment: "")
+
+            let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
             
             alert.addTextField { (textField) in
                 textField.text = ""
             }
             
-            alert.addAction(UIAlertAction(title: "Create", style: .default, handler: { action in
+            alert.addAction(UIAlertAction(title: createButton, style: .default, handler: { action in
                 
                     guard let text = alert.textFields?[0].text else {
                         self.network?.createPlayer(playerName: "")
@@ -148,7 +153,7 @@ extension ViewController: UITabBarDelegate {
                     self.network?.createPlayer(playerName: text)
             }))
             
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: cancelButton, style: .cancel, handler: nil))
             
             self.present(alert, animated: true)
             tabBar.selectedItem = nil
@@ -186,7 +191,9 @@ extension ViewController: UITableViewDelegate {
     internal func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let index = indexPath.section
         
-        let deleteAction = UITableViewRowAction(style: .default, title: "Delete") {action in
+        let deleteButton = NSLocalizedString("DeleteButton", comment: "")
+
+        let deleteAction = UITableViewRowAction(style: .default, title: deleteButton) {action in
             if let player = self.players?[index] {
                 self.createDeleteAlert(player: player)
             }
@@ -251,7 +258,10 @@ extension ViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         guard let name = self.players?[indexPath.section] else {
-            cell.name.text = "Undefined"
+            
+            let undefined = NSLocalizedString("Undefined", comment: "")
+
+            cell.name.text = undefined
             return cell
 
         }
@@ -370,13 +380,19 @@ extension ViewController {
 
     internal func createDeleteAlert(player: GLootPlayer)
     {
-        let alert = UIAlertController(title: "Delete Player", message: "Are you sure you want to delete this player?", preferredStyle: .alert)
+        let alertTitle = NSLocalizedString("DeleteAlertTitle", comment: "")
+        let alertMessage = NSLocalizedString("DeleteAlertMessage", comment: "")
+        let yesButton = NSLocalizedString("YesButton", comment: "")
+        let cancelButton = NSLocalizedString("CancelButton", comment: "")
+
         
-        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: yesButton, style: .default, handler: { action in
                 self.network?.deletePlayer(playerId: player.id)
         }))
         
-        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: cancelButton, style: .cancel, handler: nil))
         
         self.present(alert, animated: true)
     }

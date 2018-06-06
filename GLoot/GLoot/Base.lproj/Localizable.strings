@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  GLoot
+
+  Created by Guillaume Manzano on 07/06/2018.
+  Copyright © 2018 Guillaume Manzano. All rights reserved.
+*/
+
+
+"AddAlertTitle" = "Add Player";
+"AddAlertMessage" = "Enter a name for the new player";
+"CreateButton" = "Create";
+"CancelButton" = "Cancel";
+"DeleteButton" = "Delete";
+"Undefined" = "Undefined";
+"DeleteAlertTitle" = "Delete Player";
+"DeleteAlertMessage" = "Are you sure you want to delete this player?";
+"YesButton" = "Yes";
