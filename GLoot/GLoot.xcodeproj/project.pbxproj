@@ -132,7 +132,7 @@
 		55338D4720C5303B005BD5DD /* GLoot */ = {
 			isa = PBXGroup;
 			children = (
-				554A7F8520C85B8000C4F286 /* resources */,
+				554A7F8520C85B8000C4F286 /* Resources */,
 				5581065D20C587380050D291 /* Models */,
 				55338D4820C5303B005BD5DD /* AppDelegate.swift */,
 				55338D4A20C5303B005BD5DD /* ViewController.swift */,
@@ -144,13 +144,13 @@
 			path = GLoot;
 			sourceTree = "<group>";
 		};
-		554A7F8520C85B8000C4F286 /* resources */ = {
+		554A7F8520C85B8000C4F286 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				554A7F8320C857E200C4F286 /* page.mp4 */,
 				554F7C1D20C8A1E50006EFF1 /* Localizable.strings */,
 			);
-			name = resources;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		5581065D20C587380050D291 /* Models */ = {
