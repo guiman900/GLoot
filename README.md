@@ -1,6 +1,6 @@
 # G-Loot
 Technical assignment for G-Loot.
-The application is player management tool. The app show a list of players received from the server, the user have the options to add new players and view/update/delete existing ones.
+The application is a player management tool. The app show a list of players received from the server, the user have the options to add new players and view/update/delete existing ones.
 
 ## Prerequisites
 Download the G-LOOT server (https://github.com/leoho/gloot-assignment/tree/ios)
@@ -51,8 +51,8 @@ cd doc
 double click on index.html
 
 ## Tests
-The tests are available on the GLootNetworkLibrary project.
+The tests are availables on the GLootNetworkLibrary project.
 
 Open GLootNetworkLibrary project on XCode and open the file GLootNetworkLibraryTests.
 
-Inside the GLootNetworkLibraryTests click on the button on the righ of the method testExample.
+Inside the GLootNetworkLibraryTests click on the button on the righ of the testExample method.
